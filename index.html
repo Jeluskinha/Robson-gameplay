@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chave de Competição - 2 Times com Fotos</title>
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <div class="container">
+        <!--<div class="header">
+            <h1>🏆 Liga dos Robsons</h1>
+        </div>-->
+
+        <div class="bracket">
+            <!-- Time 1 -->
+            <div class="team" id="team1">
+                <div class="team-header">
+                    <h2>Escritório - A</h2>
+                    <div class="team-score">0</div>
+                </div>
+                <ul class="players-list">
+                    <li class="player">
+                        <!-- Substitua o src pela URL da foto do jogador -->
+                        <img src="./fotos/tonimar.png" alt="Tony" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Tonimar</div>
+                            <div class="player-position">função: Topo</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="./fotos//jean.jpg" alt="Jeluskinha" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Jean Lucas</div>
+                            <div class="player-position">função: Selva</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="./fotos/diego.png" alt="Diego" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Diego</div>
+                            <div class="player-position">função: Meio</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="https://via.placeholder.com/150/b21f1f/ffffff?text=JC" alt="---------" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Gustavo</div>
+                            <div class="player-position">função: Atirador</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="https://via.placeholder.com/150/fdbb2d/333333?text=RO" alt="---------" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">---------</div>
+                            <div class="player-position">função: Suporte</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- VS -->
+            <div class="versus">
+                VS
+            </div>
+
+            <!-- Time 2 -->
+            <div class="team" id="team2">
+                <div class="team-header">
+                    <h2>Escritório - B</h2>
+                    <div class="team-score">0</div>
+                </div>
+                <ul class="players-list">
+                    <li class="player">
+                        <img src="./fotos/carlos.png" alt="Carlos Ramos" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Carlos</div>
+                            <div class="player-position">função: Topo</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="https://via.placeholder.com/150/e52e71/ffffff?text=PM" alt="---------" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">---------</div>
+                            <div class="player-position">função: Selva</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="./fotos/gabriel.png" alt="Gabriel" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Gabriel</div>
+                            <div class="player-position">função: Meio</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="./fotos/jean carlo.png" alt="Jean Carlo" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Jean Carlo</div>
+                            <div class="player-position">função: Atirador</div>
+                        </div>
+                    </li>
+                    <li class="player">
+                        <img src="./fotos/Juan.png" alt="Juan" class="player-photo">
+                        <div class="player-info">
+                            <div class="player-name">Juan</div>
+                            <div class="player-position">função: Suporte</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="match-info">
+            <div class="timer" id="timer">Próxima partida: 15:00</div>
+            <div class="stage">Mapa: summoner's rift • Modalidade: Competitivo</div>
+            <div class="stage">Transmissão: Twitch.tv/Robson</div>
+        </div>
+    </div>
+
+    <script>
+        // Timer para próxima partida
+        function updateTimer() {
+            const now = new Date();
+            const nextMatch = new Date();
+            nextMatch.setHours(72, 0, 0, 0);
+            
+            if (now > nextMatch) {
+                nextMatch.setDate(nextMatch.getDate() + 1);
+            }
+            
+            const diff = nextMatch - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('timer').textContent = 
+                `Próxima partida em: ${hours}h ${minutes}m - sábado 04/10`;
+        }
+
+        // Atualizar timer a cada minuto
+        setInterval(updateTimer, 60000);
+        updateTimer();
+
+        // Efeito de clique nos jogadores
+        document.querySelectorAll('.player').forEach(player => {
+            player.addEventListener('click', function() {
+                this.style.background = '#1a2a6c';
+                this.style.color = 'white';
+                setTimeout(() => {
+                    this.style.background = '';
+                    this.style.color = '';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header p {
+  font-size: 1.3em;
+  opacity: 0.9;
+}
+
+.bracket {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.team {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  min-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #e52e71;
+  position: relative;
+}
+
+.team-header h2 {
+  color: #1a2a6c;
+  font-size: 1.8em;
+  margin-bottom: 8px;
+}
+
+.team-score {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #e52e71;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.players-list {
+  list-style: none;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 5px solid #1a2a6c;
+  transition: all 0.3s ease;
+  gap: 15px;
+}
+
+.player:hover {
+  background: #e9ecef;
+  transform: translateX(8px);
+}
+
+.player-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1a2a6c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-name {
+  font-weight: bold;
+  color: #1a2a6c;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.player-position {
+  color: #666;
+  font-size: 0.9em;
+  background: #e9ecef;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.versus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  backdrop-filter: blur(10px);
+}
+
+.match-info {
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timer {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.stage {
+  font-size: 1.3em;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .bracket {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .versus {
+    transform: rotate(90deg);
+    margin: 20px 0;
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+  }
+
+  .team {
+    min-width: 300px;
+  }
+}
+
+/* Estilos para as fotos de exemplo */
+.photo-placeholder {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
